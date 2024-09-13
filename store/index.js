@@ -1,36 +1,35 @@
-import process from 'process';
-
-import { combineReducers, createStore } from "redux";
-import productsReducer from "./productsReducer";
+import { combineReducers, createStore } from 'redux'
+import productsReducer from './productsReducer'
 import cartReducer, {
   addCartItem,
   decreaseCartItemQuantity,
   increaseCartItemQuantity,
-  decreaseCartItemQuantity,
-} from "./cartReducer";
+} from './cartReducer'
 import wishListReducer, {
   addWishListItem,
   removeWishListItem,
-} from "./wishListReducer";
+} from './wishListReducer'
 
 const reducer = combineReducers({
   products: productsReducer,
   cartItems: cartReducer,
   wishList: wishListReducer,
-});
+})
 
-export const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.());
+export const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__?.()
+)
 
-// console.log(store);
+// console.log(store)
 
-// store.dispatch(addCartItem(1));
-// store.dispatch(addCartItem(12));
+// store.dispatch(addCartItem(1))
+// store.dispatch(addCartItem(12))
 
 // store.dispatch(increaseCartItemQuantity(12))
-// store.dispatch( decreaseCartItemQuantity(12));
 
-// store.dispatch( decreaseCartItemQuantity(12));
-
+// store.dispatch(decreaseCartItemQuantity(12))
+// store.dispatch(decreaseCartItemQuantity(12))
 
 // store.dispatch(addWishListItem(18))
 // store.dispatch(addWishListItem(11))
